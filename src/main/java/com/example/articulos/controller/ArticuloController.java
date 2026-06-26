@@ -28,7 +28,7 @@ public class ArticuloController {
     public ArticuloController(ArticuloService articuloService) {
         this.articuloService = articuloService;
     }
-    
+
     @GetMapping
     public List <Articulo> listar(){
         return articuloService.listarArticulos();
@@ -52,7 +52,6 @@ public class ArticuloController {
         }
         return ResponseEntity.ok(articuloService.actualizarArticulo(id, articulo));
     }
-
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> eliminar(@PathVariable Long id) {
         if (articuloService.obtenerArticuloPorId(id).isEmpty()) {
